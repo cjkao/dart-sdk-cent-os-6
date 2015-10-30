@@ -1,3 +1,11 @@
+DART for CENT OS 6.x
+==================
+64bit
+
+## How to build?
+
+* install [gcc dev compiler 4.7](http://superuser.com/questions/381160/how-to-install-gcc-4-7-x-4-8-x-on-centos)
+    
 ````
     cd /etc/yum.repos.d
     wget http://people.centos.org/tru/devtools-1.1/devtools-1.1.repo 
