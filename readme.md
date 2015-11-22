@@ -51,6 +51,6 @@ replace fwrite(....) to if(fwrite(...)){/* no op */}
 ''''
 
 download [analyzer_cli](https://github.com/dart-lang/analyzer_cli.git), copy to out/ReleaseX64/packages (src folder), and continue run 
-`tools/build.py --mode=release --arch=x64 create_sdk` untile build pass  a
+`tools/build.py --mode=release --arch=x64 create_sdk` untile build pass  
 
-checkedin executable `tools/sdks/linux/dart-sdk`  is not executable in centos, have to replace it with runnable  version
+checkedin executable `tools/sdks/linux/dart-sdk`  is not executable in centos, have to replace it with runnable  version or remove linux folder
