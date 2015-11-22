@@ -24,3 +24,28 @@ DART for CENT OS 6.x
 ## Setup Env
 
 * PATH=/opt/centos/devtoolset-1.1/root/usr/bin:/usr/local/bin:/home/peter/depot_tools 
+
+## checkout dart sdk
+[github dart sdk](https://github.com/dart-lang/sdk)
+
+''''
+   git clone https://github.com/dart-lang/sdk.git
+   git checkout stable
+   git pull
+''''
+
+## Follow instruction build dart
+[Build command](https://github.com/dart-lang/sdk/wiki/Building-Dart-on-CentOS,-Red-Hat,-Fedora-and-Amazon-Linux-AMI)
+
+
+## for 1.3.x
+replace fwrite(....) to if(fwrite(...)){/* no op */}
+'''' 
+   vi runtime/bin/builtin_natives.cc
+   vi runtime/bin/builtin_gen_snapshot.cc
+''''
+
+download [analyzer_cli](https://github.com/dart-lang/analyzer_cli.git), copy to out/ReleaseX64/packages (src folder), and continue run 
+`tools/build.py --mode=release --arch=x64 create_sdk` untile build pass  a
+
+checkedin executable `tools/sdks/linux/dart-sdk`  is not executable in centos, have to replace it with runnable  version
