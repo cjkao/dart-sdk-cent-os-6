@@ -27,27 +27,30 @@ DART for CENT OS 6.x
         
 
 ## Setup Env 
-
+* update timestamp using `ntpdate -b -u time.nist.gov`
+* using latest [git client](http://stackoverflow.com/questions/21820715/how-to-install-latest-version-of-git-on-centos-6-x-7-x)
 * PATH=/opt/centos/devtoolset-1.1/root/usr/bin:/usr/local/bin:/home/peter/depot_tools 
 
 ## checkout dart sdk
 [github dart sdk](https://github.com/dart-lang/sdk)
 
 ````
-   git clone https://github.com/dart-lang/sdk.git
-   git checkout stable
-   git pull
+   mkdir dart-sdk
+   cd dart-sdk
+   gclient config https://github.com/dart-lang/sdk.git
+   gclient sync
+   cd dart-sdk/sdk
+   ./tools/build.py --mode release --arch x64 create_sdk
 ````
 
 ## Follow instruction build dart
 [Build command](https://github.com/dart-lang/sdk/wiki/Building-Dart-on-CentOS,-Red-Hat,-Fedora-and-Amazon-Linux-AMI)
 
 
-## for 1.3.x
+## for 1.6.x
 replace `fwrite(....)` to `if(fwrite(...)){/* no op */}`
 ````
-   vi runtime/bin/builtin_natives.cc
-   vi runtime/bin/builtin_gen_snapshot.cc
+      vi runtime/bin/builtin_gen_snapshot.cc
 ````
 
 download [analyzer_cli](https://github.com/dart-lang/analyzer_cli.git), copy to out/ReleaseX64/packages (src folder), and continue run 
