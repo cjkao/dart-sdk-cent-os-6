@@ -57,3 +57,6 @@ download [analyzer_cli](https://github.com/dart-lang/analyzer_cli.git), copy to 
 `tools/build.py --mode=release --arch=x64 create_sdk` untile build pass  
 
 checkedin executable `tools/sdks/linux/dart-sdk`  is not executable in centos, have to replace it with runnable one or remove linux folder to ignore it
+
+## GCC 4.8.4
+https://www.saintsouth.net/blog/update-libstdcpp-on-centos6/
